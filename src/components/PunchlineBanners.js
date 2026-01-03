@@ -1,0 +1,64 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
+export default function PunchlineBanners() {
+  const punchlines = [
+    "Uthata hu kalam aur inqilab likhta hu ; abhi naukri pr hu yaro chalo thodi der baat likhta hu"
+  ];
+
+  const shayariBg =
+    "Mei gulalb bana rha hu ; uske dil me na sahi uski almari ki kitab me daba rha ";
+
+  const reactions = ['HAHAHA', 'WAAH WAAH'];
+
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setActive(true);
+  }, []);
+
+  return (
+    <section className="relative py-32 overflow-hidden bg-[#0b0b0b] text-white">
+      {/* 🔹 Grain + Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-900 to-black opacity-90" />
+      <div className="absolute inset-0 noise-overlay opacity-20" />
+
+      {/* 🔹 Shayari Background (not in container) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <p className="text-[4rem] md:text-[6rem] font-display font-bold text-white/5 text-center leading-tight max-w-6xl animate-slow-float">
+          {shayariBg} {shayariBg}
+        </p>
+      </div>
+
+      {/* 🔹 Main Punchline */}
+      <div className="relative z-10 text-center px-6">
+        <div
+          className={`inline-block px-10 py-8 bg-white text-black font-bold text-2xl md:text-3xl comic-border transition-all duration-700 ${
+            active ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
+          }`}
+        >
+          <p className="whitespace-pre-line">
+            {punchlines[0]}
+          </p>
+        </div>
+      </div>
+
+      {/* 🔹 Infinite Reaction Marquee */}
+      <div className="relative z-10 mt-20 overflow-hidden">
+        <div className="flex w-max animate-marquee-infinite">
+          {[...reactions, ...reactions, ...reactions, ...reactions].map(
+            (word, i) => (
+              <span
+                key={i}
+                className="mx-10 text-4xl md:text-5xl font-display font-extrabold text-accent rotate-[-6deg]"
+              >
+                {word}
+              </span>
+            )
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
