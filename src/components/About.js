@@ -69,7 +69,7 @@ export default function About() {
             <div className="pt-6">
               <div className="w-48 h-1 bg-gradient-to-r from-primary to-accent mb-2"></div>
               <div className="font-display text-2xl text-primary">
-                — Comic Arambh
+                Arambh
               </div>
             </div>
           </div>

@@ -1,0 +1,7 @@
+/* Subtle readability enhancements for performance card titles */
+.performances-title {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.32), 0 0.5px 0 rgba(0,0,0,0.18);
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.18);
+  text-stroke: 0.5px rgba(0,0,0,0.18);
+  letter-spacing: 0.04em;
+}

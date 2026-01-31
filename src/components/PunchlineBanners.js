@@ -4,19 +4,24 @@ import { useEffect, useState } from 'react';
 
 export default function PunchlineBanners() {
   const punchlines = [
-    "Uthata hu kalam aur inqilab likhta hu ; abhi naukri pr hu yaro chalo thodi der baat likhta hu"
+    "Uthata hu kalam aur inqilab likhta hu ; abhi naukri pr hu yaro chalo thodi der baat likhta hu",
+    "Mei gulalb bana rha hu ; uske dil me na sahi uski almari ki kitab me daba rha "
   ];
 
-  const shayariBg =
-    "Mei gulalb bana rha hu ; uske dil me na sahi uski almari ki kitab me daba rha ";
+  // Removed shayariBg for plain black background
 
   const reactions = ['HAHAHA', 'WAAH WAAH'];
 
   const [active, setActive] = useState(false);
+  const [punchlineIndex, setPunchlineIndex] = useState(0);
 
   useEffect(() => {
     setActive(true);
-  }, []);
+    const interval = setInterval(() => {
+      setPunchlineIndex((prev) => (prev + 1) % punchlines.length);
+    }, 4000); // Change punchline every 4 seconds
+    return () => clearInterval(interval);
+  }, [punchlines.length]);
 
   return (
     <section className="relative py-32 overflow-hidden bg-[#0b0b0b] text-white">
@@ -24,12 +29,7 @@ export default function PunchlineBanners() {
       <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-900 to-black opacity-90" />
       <div className="absolute inset-0 noise-overlay opacity-20" />
 
-      {/* 🔹 Shayari Background (not in container) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <p className="text-[4rem] md:text-[6rem] font-display font-bold text-white/5 text-center leading-tight max-w-6xl animate-slow-float">
-          {shayariBg} {shayariBg}
-        </p>
-      </div>
+      {/* Black background only, no shayari text */}
 
       {/* 🔹 Main Punchline */}
       <div className="relative z-10 text-center px-6">
@@ -39,7 +39,7 @@ export default function PunchlineBanners() {
           }`}
         >
           <p className="whitespace-pre-line">
-            {punchlines[0]}
+            {punchlines[punchlineIndex]}
           </p>
         </div>
       </div>

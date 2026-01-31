@@ -3,14 +3,13 @@
 
 import { useEffect } from 'react';
 import ParallaxBackground from '@/components/ParallaxBackground';
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import PunchlineBanners from '@/components/PunchlineBanners';
 import Performances from '@/components/Performances';
-import Gallery from '@/components/Gallery';
+import PerformanceJourney from '@/components/PerformanceJourney';
+import SpecialPerformances from '@/components/SpecialPerformances';
 import Booking from '@/components/Booking';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   useEffect(() => {
@@ -40,16 +39,15 @@ export default function Home() {
   return (
     <>
       <ParallaxBackground />
-      <Navbar />
       <main>
         <Hero />
         <About />
         <PunchlineBanners />
         <Performances />
-        <Gallery />
+        <PerformanceJourney />
+        <SpecialPerformances />
         <Booking />
       </main>
-      <Footer />
     </>
   );
 }

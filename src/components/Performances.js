@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import styles from './Performances.module.css';
 
 const performances = [
   {
@@ -8,7 +9,6 @@ const performances = [
     title: 'College Fest Madness',
     type: 'College Festival',
     description: 'Roaring laughter from 2000+ students',
-    highlight: 'Most Viral Performance 2023',
     color: 'border-primary',
     image: '/comic-3.png'
   },
@@ -17,25 +17,22 @@ const performances = [
     title: 'Corporate Comedy Night',
     type: 'Corporate Event',
     description: 'Clean, witty humor for professionals',
-    highlight: 'Client Rating: 4.9/5',
     color: 'border-accent',
-    image: '/comic-4.png'
+    image: '/comic-5.png'
   },
   {
     id: 3,
     title: 'Poetry Slam',
     type: 'Shayari Evening',
     description: 'Heartfelt verses with comic timing',
-    highlight: 'Audience Choice Award',
     color: 'border-secondary',
-    image: '/comic-5.png'
+    image: '/comic-4.png'
   },
   {
     id: 4,
     title: 'Open Mic Champion',
     type: 'Competition',
     description: 'Weekly comedy battle victories',
-    highlight: '3-Month Winning Streak',
     color: 'border-primary',
     image: '/comic-6.png'
   }
@@ -83,7 +80,7 @@ export default function Performances() {
                     {perf.type}
                   </span>
 
-                  <h3 className="font-display text-xl font-bold text-white mb-2">
+                  <h3 className={`font-display text-xl font-bold text-white mb-2 tracking-wide ${styles['performances-title']}`}>
                     {perf.title}
                   </h3>
 
@@ -91,11 +88,7 @@ export default function Performances() {
                     {perf.description}
                   </p>
 
-                  <div className="mt-auto pt-4 border-t border-text-secondary/20">
-                    <span className="text-accent font-bold">
-                      {perf.highlight}
-                    </span>
-                  </div>
+                   {/* highlight removed */}
                 </div>
 
                 {/* Comic Border Hover */}

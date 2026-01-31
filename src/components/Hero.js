@@ -38,7 +38,7 @@ export default function Hero() {
             textShadow: '4px 4px 0 #FFD600, 8px 8px 0 #00E5FF, 12px 12px 0 rgba(0, 0, 0, 0.3)'
           }}
         >
-          COMIC ARAMBH
+        ARAMBH
         </h1>
         
         <div className="relative inline-block mb-12">
