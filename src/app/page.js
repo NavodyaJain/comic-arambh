@@ -9,6 +9,7 @@ import PunchlineBanners from '@/components/PunchlineBanners';
 import Performances from '@/components/Performances';
 import PerformanceJourney from '@/components/PerformanceJourney';
 import SpecialPerformances from '@/components/SpecialPerformances';
+import MomentsWithCrowd from '@/components/MomentsWithCrowd';
 import Booking from '@/components/Booking';
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
         <Performances />
         <PerformanceJourney />
         <SpecialPerformances />
+        <MomentsWithCrowd />
         <Booking />
       </main>
     </>
