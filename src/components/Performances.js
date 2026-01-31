@@ -13,14 +13,6 @@ const performances = [
     image: '/comic-3.png'
   },
   {
-    id: 2,
-    title: 'Corporate Comedy Night',
-    type: 'Corporate Event',
-    description: 'Clean, witty humor for professionals',
-    color: 'border-accent',
-    image: '/comic-5.png'
-  },
-  {
     id: 3,
     title: 'Poetry Slam',
     type: 'Shayari Evening',
@@ -52,7 +44,7 @@ export default function Performances() {
           From intimate gatherings to massive festivals, every show is a unique comic adventure
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {performances.map((perf) => (
             <div
               key={perf.id}

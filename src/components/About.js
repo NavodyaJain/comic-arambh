@@ -13,9 +13,9 @@ export default function About() {
                 {/* Aspect Ratio Wrapper (900x600 = 3:2) */}
                 <div className="w-full aspect-[3/2] relative">
                   <img
-                    src="/comic-2.png"
+                    src="/lukcnow.jpeg"
                     alt="Comic illustration"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
                   />
                 </div>
 
